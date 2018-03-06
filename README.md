@@ -2,9 +2,6 @@
 
 Extra node helper functions for the messenger
 
-Dependencies
-* [moment](https://github.com/moment/moment)
-
 ## Setup
 Require the extra object
 ```javascript
