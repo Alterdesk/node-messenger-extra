@@ -31,6 +31,14 @@ var mentionedAllRegex = new RegExp(/\[mention=@all\]/, 'i');
 
 module.exports = {
 
+    // Capitalize first letter in the string
+    capitalizeFirstLetter: function(string) {
+        if(string == null || string == "") {
+            return string;
+        }
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    },
+
     // Only capitalize last word in the name: "de Boer"
     capitalizeLastName: function(string) {
         if(string == null || string == "") {
@@ -48,14 +56,6 @@ module.exports = {
             }
         }
         return result;
-    },
-
-    // Capitalize first letter in the string
-    capitalizeFirstLetter: function(string) {
-        if(string == null || string == "") {
-            return string;
-        }
-        return string.charAt(0).toUpperCase() + string.slice(1);
     },
 
     // Round a number to a given precision
