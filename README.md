@@ -38,25 +38,6 @@ var pi = Math.PI;
 var rounded = extra.round(pi, 2);
 ```
 
-## Format a date
-Format date to "LLLL" with "en-US"
-```javascript
-// A date
-var date = Date.now();
-// Formatted string "Thursday, Febuari 20, 2018 8:30 AM"
-var formatted = extra.formatDate(date);
-```
-
-Format date to "D MMMM YYYY, LTS" with "nl-NL"
-```javascript
-// A date
-var date = Date.now();
-var locale = "nl-NL";
-var format = "D MMMM YYYY, LTS";
-// Formatted string "20 februari 2018, 8:30:45"
-var formatted = extra.formatDate(date, locale, format);
-```
-
 ## Regex
 To make user input validation easier, regex for text, numbers, phone numbers, email addresses and mentioned all are 
 provided.

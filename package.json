@@ -11,8 +11,5 @@
     "url": "https://github.com/Alterdesk/node-messenger-extra"
   },
   "author": "Alterdesk",
-  "license": "MIT",
-  "dependencies": {
-    "moment": "^2.20.1"
-  }
+  "license": "MIT"
 }

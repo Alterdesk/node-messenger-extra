@@ -2,7 +2,6 @@
 //   Node Messenger Extra
 //
 // Dependencies:
-//   moment
 //
 // Configuration:
 //
@@ -10,9 +9,6 @@
 //
 // Author:
 //   Alterdesk
-
-// Requirements
-var Moment = require('moment');
 
 // Regex to check for text
 var textRegex = new RegExp(/\w+/, 'i');
@@ -62,13 +58,6 @@ module.exports = {
     round: function(value, precision) {
         var multiplier = Math.pow(10, precision || 0);
         return Math.round(value * multiplier) / multiplier;
-    },
-
-    // Format a date to a string(Moment wrapper)
-    formatDate: function(date, customLocale, customFormat) {
-        var format = customFormat || "LLLL";
-        var locale = customLocale || "en-US";
-        return Moment(date).locale(locale).format(format);
     },
 
     // Get the regular expression to detect text
