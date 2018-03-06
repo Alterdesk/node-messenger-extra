@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.alterdesk.com:other/node-messenger-extra.git"
+    "url": "https://github.com/Alterdesk/node-messenger-extra"
   },
   "author": "Alterdesk",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "moment": "^2.20.1"
   }
