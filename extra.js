@@ -22,6 +22,12 @@ var phoneRegex = new RegExp(/^\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[87
 // Regex to check for an email address
 var emailRegex = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/, 'i');
 
+// Regex to check for mentioned tags
+var mentionedRegex = new RegExp(/\[mention=([a-zA-Z0-9_-]+||(@all))\]/, 'i');
+
+// Regex to check for user mentioned tags
+var mentionedUserRegex = new RegExp(/\[mention=[a-zA-Z0-9_-]+\]/, 'i');
+
 // Regex to check for mentioned all tag
 var mentionedAllRegex = new RegExp(/\[mention=@all\]/, 'i');
 
@@ -78,6 +84,16 @@ module.exports = {
     // Get the regular expression to detect an email address
     getEmailRegex: function() {
         return emailRegex;
+    },
+
+    // Get the regular expression to detect mentioned tags
+    getMentionedRegex: function() {
+        return mentionedRegex;
+    },
+
+    // Get the regular expression to detect mentioned user tag
+    getMentionedUserRegex: function() {
+        return mentionedUserRegex;
     },
 
     // Get the regular expression to detect the mentioned all tag
