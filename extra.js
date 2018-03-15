@@ -23,16 +23,16 @@ var phoneRegex = new RegExp(/^\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[87
 var emailRegex = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/, 'gi');
 
 // Regex to check for mentioned tags
-var mentionedRegex = new RegExp(/\[mention=([a-zA-Z0-9_-]+||(@all))\]/, 'g');
+var mentionedRegex = new RegExp(/\[mention=(([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})||(@all))\]/, 'gi');
 
 // Regex to check for user mentioned tags
-var mentionedUserRegex = new RegExp(/\[mention=[a-zA-Z0-9_-]+\]/, 'g');
+var mentionedUserRegex = new RegExp(/\[mention=[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\]/, 'gi');
 
 // Regex to check for mentioned all tag
 var mentionedAllRegex = new RegExp(/\[mention=@all\]/, 'g');
 
 // Regex to check for uuid
-var uuidRegex = new RegExp(/[a-zA-Z0-9_-]+/, 'gi');
+var uuidRegex = new RegExp(/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/, 'gi');
 
 module.exports = {
 
