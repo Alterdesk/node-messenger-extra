@@ -31,6 +31,9 @@ var mentionedUserRegex = new RegExp(/\[mention=[a-zA-Z0-9_-]+\]/, 'i');
 // Regex to check for mentioned all tag
 var mentionedAllRegex = new RegExp(/\[mention=@all\]/, 'i');
 
+// Regex to check for uuid
+var uuidRegex = new RegExp(/[a-zA-Z0-9_-]+/, 'i');
+
 module.exports = {
 
     // Capitalize first letter in the string
@@ -99,5 +102,9 @@ module.exports = {
     // Get the regular expression to detect the mentioned all tag
     getMentionedAllRegex: function() {
         return mentionedAllRegex;
+    },
+
+    getUuidRegex : function() {
+        return uuidRegex;
     },
 }
