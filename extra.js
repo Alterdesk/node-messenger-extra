@@ -11,28 +11,28 @@
 //   Alterdesk
 
 // Regex to check for text
-var textRegex = new RegExp(/\w+/, 'i');
+var textRegex = new RegExp(/\w+/, 'gi');
 
 // Regex to check for a number
-var numberRegex = new RegExp(/\d+/, 'i');
+var numberRegex = new RegExp(/\d+/, 'g');
 
 // Regex to check for a phone number
-var phoneRegex = new RegExp(/^\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d| 2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]| 4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$/);
+var phoneRegex = new RegExp(/^\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d| 2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]| 4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$/, 'g');
 
 // Regex to check for an email address
-var emailRegex = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/, 'i');
+var emailRegex = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/, 'gi');
 
 // Regex to check for mentioned tags
-var mentionedRegex = new RegExp(/\[mention=([a-zA-Z0-9_-]+||(@all))\]/, 'i');
+var mentionedRegex = new RegExp(/\[mention=([a-zA-Z0-9_-]+||(@all))\]/, 'g');
 
 // Regex to check for user mentioned tags
-var mentionedUserRegex = new RegExp(/\[mention=[a-zA-Z0-9_-]+\]/, 'i');
+var mentionedUserRegex = new RegExp(/\[mention=[a-zA-Z0-9_-]+\]/, 'g');
 
 // Regex to check for mentioned all tag
-var mentionedAllRegex = new RegExp(/\[mention=@all\]/, 'i');
+var mentionedAllRegex = new RegExp(/\[mention=@all\]/, 'g');
 
 // Regex to check for uuid
-var uuidRegex = new RegExp(/[a-zA-Z0-9_-]+/, 'i');
+var uuidRegex = new RegExp(/[a-zA-Z0-9_-]+/, 'gi');
 
 module.exports = {
 
