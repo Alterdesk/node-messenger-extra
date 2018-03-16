@@ -52,12 +52,15 @@ module.exports = {
         var words = string.split(" ");
         var result = "";
         for(var index in words) {
+            if(index > 0) {
+                result += " ";
+            }
             var word = words[index];
             var nextIndex = parseInt(index) + 1;
             if(nextIndex < words.length) {
-                result +=  " " + word;
+                result += word;
             } else {
-                result += " " + this.capitalizeFirstLetter(word);
+                result += this.capitalizeFirstLetter(word);
             }
         }
         return result;
