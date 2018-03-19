@@ -66,6 +66,27 @@ module.exports = {
         return result;
     },
 
+    mentionToUserString: function(mention) {
+        var firstName = mention["first_name"];
+        var lastName = mention["last_name"];
+        var companyName = mention["company_name"];
+        var user = "";
+        if(firstName !== null && lastName !== null) {
+            user += firstName + " " + lastName;
+        } else if(firstName !== null) {
+            user += firstName;
+        } else if(lastName !== null) {
+            user += lastName;
+        }
+        if(user.length === 0) {
+            user += mention["id"];
+        }
+        if(companyName != null) {
+            user += " (" + companyName + ")";
+        }
+        return user;
+    },
+
     // Round a number to a given precision
     round: function(value, precision) {
         var multiplier = Math.pow(10, precision || 0);
