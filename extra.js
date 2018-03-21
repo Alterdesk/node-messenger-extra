@@ -66,7 +66,10 @@ module.exports = {
         return result;
     },
 
-    mentionToUserString: function(mention) {
+    mentionToUserString: function(mention, mentionedAllText) {
+        if(mention["id"].toUpperCase() === "@ALL") {
+            return mentionedAllText || "All members";
+        }
         var firstName = mention["first_name"];
         var lastName = mention["last_name"];
         var companyName = mention["company_name"];

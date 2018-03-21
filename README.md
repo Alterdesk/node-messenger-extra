@@ -26,6 +26,26 @@ var text = "de boer";
 var capitalized = extra.capitalizeLastName(text);
 ```
 
+## Format a mention to a string
+```javascript
+// Format for a mentioned all tag
+var formatAllMembers = "All members";
+// Example user mention data from the messenger
+var mention = {};
+mention["id"] = <USER_UUID>;
+mention["first_name"] = "Piet";
+mention["last_name"] = "de Boer";
+mention["company_name"] = "Messenger";
+// Formatted as "Piet de Boer (Messenger)"
+var formattedUser = extra.mentionToUserString(mention, formatAllMembers);
+
+// Example all mention data from the messenger
+var allMention = {};
+allMention["id"] = "@all";
+// Formatted as "All Members"
+var formattedAll = extra.mentionToUserString(mention, formatAllMembers);
+```
+
 ## Round a number
 Round a number by a given precision of decimals
 ```javascript
