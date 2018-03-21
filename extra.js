@@ -71,17 +71,17 @@ module.exports = {
         var lastName = mention["last_name"];
         var companyName = mention["company_name"];
         var user = "";
-        if(firstName !== null && lastName !== null) {
+        if(firstName && lastName) {
             user += firstName + " " + lastName;
-        } else if(firstName !== null) {
+        } else if(firstName) {
             user += firstName;
-        } else if(lastName !== null) {
+        } else if(lastName) {
             user += lastName;
         }
         if(user.length === 0) {
             user += mention["id"];
         }
-        if(companyName != null) {
+        if(companyName) {
             user += " (" + companyName + ")";
         }
         return user;
