@@ -84,7 +84,7 @@ module.exports = {
         if(user.length === 0) {
             user += mention["id"];
         }
-        if(companyName) {
+        if(companyName && companyName.length > 0) {
             user += " (" + companyName + ")";
         }
         return user;
