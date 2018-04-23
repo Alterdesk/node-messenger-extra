@@ -70,6 +70,11 @@ var round = function(value, precision) {
     return Math.round(value * multiplier) / multiplier;
 }
 
+// Get the regular expression to detect non empty characters
+var getNonEmptyRegex = function() {
+    return new RegExp(/\S+/, 'gi');
+}
+
 // Get the regular expression to detect text
 var getTextRegex = function() {
     return new RegExp(/\w+/, 'gi');
