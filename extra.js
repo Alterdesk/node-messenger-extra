@@ -119,6 +119,7 @@ module.exports = {
     capitalizeLastName : capitalizeLastName,
     mentionToUserString : mentionToUserString,
     round : round,
+    getNonEmptyRegex : getNonEmptyRegex,
     getTextRegex : getTextRegex,
     getNumberRegex : getNumberRegex,
     getPhoneRegex : getPhoneRegex,
