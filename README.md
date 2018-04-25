@@ -8,6 +8,24 @@ Require the extra object
 var extra = require('node-messenger-extra');
 ```
 
+## Escape a string to use for regular expression
+```javascript
+// Text to search for
+var searchText = "Hello?";
+// Escaped to "Hello\\?"
+var escapedText = extra.escapeRegex(searchText);
+// Create regex to search with
+var regex = new RegExp(escapedText, 'gi');
+```
+
+## Replace all instances of a string
+```javascript
+// Filename with spaces
+var filename = "Photo of my cat.jpg";
+// Filename changed to "Photo_of_my_cat.jpg"
+filename = extra.replaceAll(filename, " ", "_");
+```
+
 ## Capitalize a word or sentence
 Capitalize the first letter in a string
 ```javascript

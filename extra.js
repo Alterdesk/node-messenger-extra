@@ -10,6 +10,14 @@
 // Author:
 //   Alterdesk
 
+var escapeRegex = function(string) {
+    return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
+
+var replaceAll = function(string, search, replace) {
+    return string.replace(new RegExp(escapeRegex(search), 'g'), replace);
+}
+
 // Capitalize first letter in the string
 var capitalizeFirstLetter = function(string) {
     if(string == null || string == "") {
@@ -115,6 +123,8 @@ var getUuidRegex  = function() {
 }
 
 module.exports = {
+    escapeRegex : escapeRegex,
+    replaceAll : replaceAll,
     capitalizeFirstLetter : capitalizeFirstLetter,
     capitalizeLastName : capitalizeLastName,
     mentionToUserString : mentionToUserString,
