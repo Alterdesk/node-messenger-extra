@@ -18,6 +18,14 @@ var replaceAll = function(string, search, replace) {
     return string.replace(new RegExp(escapeRegex(search), 'g'), replace);
 }
 
+// String to all caps
+var allCaps = function(string) {
+    if(string == null || string == "") {
+        return string;
+    }
+    return string.toUpperCase();
+}
+
 // Capitalize first letter in the string
 var capitalizeFirstLetter = function(string) {
     if(string == null || string == "") {
