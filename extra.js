@@ -141,6 +141,8 @@ var getUuidRegex  = function() {
 module.exports = {
     escapeRegex : escapeRegex,
     replaceAll : replaceAll,
+    lowercase : lowercase,
+    uppercase : uppercase,
     capitalizeFirstLetter : capitalizeFirstLetter,
     capitalizeLastName : capitalizeLastName,
     mentionToUserString : mentionToUserString,
