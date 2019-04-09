@@ -138,6 +138,10 @@ var getUuidRegex  = function() {
     return new RegExp(/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/, 'gi');
 }
 
+var getFilePathRegex = function() {
+    return new RegExp(/^((\/tmp\/messenger-pdfs\/)|(\/tmp\/messenger-downloads\/)|(\/usr\/local\/share\/bots\/resources\/))([0-9a-zA-Z\_\-\/]+(.[0-9a-zA-Z]+)?)+$/, 'g');
+}
+
 module.exports = {
     escapeRegex : escapeRegex,
     replaceAll : replaceAll,
@@ -155,5 +159,6 @@ module.exports = {
     getMentionedRegex : getMentionedRegex,
     getMentionedUserRegex : getMentionedUserRegex,
     getMentionedAllRegex : getMentionedAllRegex,
-    getUuidRegex : getUuidRegex
+    getUuidRegex : getUuidRegex,
+    getFilePathRegex : getFilePathRegex
 }
