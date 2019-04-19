@@ -111,7 +111,8 @@ var getNumberRegex = function() {
 
 // Get the regular expression to detect a phone number
 var getPhoneRegex = function() {
-    return new RegExp(/^\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d| 2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]| 4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$/, 'g');
+//    return new RegExp(/^\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d| 2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]| 4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$/, 'g');
+    return new RegExp(/(0|\+[1-9]{2,3})[0-9]{9}/, 'g');
 }
 
 // Get the regular expression to detect an email address
@@ -134,7 +135,7 @@ var getMentionedAllRegex = function() {
     return new RegExp(/\[mention=@all\]/, 'g');
 }
 
-var getUuidRegex  = function() {
+var getUuidRegex = function() {
     return new RegExp(/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/, 'gi');
 }
 
