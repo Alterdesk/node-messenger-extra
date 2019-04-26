@@ -157,11 +157,16 @@ var getUuidRegex = function() {
     return new RegExp(/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/, 'gi');
 }
 
+var getBase64Regex = function() {
+    return new RegExp(/^(?:[a-z0-9+\/]{4})*(?:[a-z0-9+\/]{2}==|[a-z0-9+\/]{3}=)?$/, 'gi');
+}
+
 var getFilePathRegex = function() {
     return new RegExp(/^((\/tmp\/messenger-pdfs\/)|(\/tmp\/messenger-downloads\/)|(\/usr\/local\/share\/bots\/resources\/))([0-9a-zA-Z\_\-\/]+(.[0-9a-zA-Z]+)?)+$/, 'g');
 }
 
 module.exports = {
+    escapeHtml : escapeHtml,
     escapeRegex : escapeRegex,
     replaceAll : replaceAll,
     lowercase : lowercase,
