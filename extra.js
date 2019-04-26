@@ -11,8 +11,8 @@
 //   Alterdesk
 
 var escapeHtml = function(string) {
-    if(string == null || string.length === 0) {
-        return unsafe;
+    if(typeof string !== "string" || string.length === 0) {
+        return string;
     }
     string = string.replace(/&/g, "&amp;");
     string = string.replace(/</g, "&lt;");
@@ -23,14 +23,14 @@ var escapeHtml = function(string) {
 }
 
 var escapeRegex = function(string) {
-    if(string == null || string == "") {
+    if(typeof string !== "string" || string == "") {
         return string;
     }
     return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
 
 var replaceAll = function(string, search, replace) {
-    if(string == null || string == "" || search == null || replace == null) {
+    if(typeof string !== "string" || string == "" || search == null || replace == null) {
         return string;
     }
     return string.replace(new RegExp(escapeRegex(search), 'g'), replace);
@@ -38,7 +38,7 @@ var replaceAll = function(string, search, replace) {
 
 // String to lowercase
 var lowercase = function(string) {
-    if(string == null || string == "") {
+    if(typeof string !== "string" || string == "") {
         return string;
     }
     return string.toLowerCase();
@@ -46,7 +46,7 @@ var lowercase = function(string) {
 
 // String to uppercase
 var uppercase = function(string) {
-    if(string == null || string == "") {
+    if(typeof string !== "string" || string == "") {
         return string;
     }
     return string.toUpperCase();
@@ -54,7 +54,7 @@ var uppercase = function(string) {
 
 // Capitalize first letter in the string
 var capitalizeFirstLetter = function(string) {
-    if(string == null || string == "") {
+    if(typeof string !== "string" || string == "") {
         return string;
     }
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -62,7 +62,7 @@ var capitalizeFirstLetter = function(string) {
 
 // Only capitalize last word in the name: "de Boer"
 var capitalizeLastName = function(string) {
-    if(string == null || string == "") {
+    if(typeof string !== "string" || string == "") {
         return string;
     }
     var words = string.split(" ");
