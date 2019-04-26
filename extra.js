@@ -10,11 +10,29 @@
 // Author:
 //   Alterdesk
 
+var escapeHtml = function(string) {
+    if(string == null || string.length === 0) {
+        return unsafe;
+    }
+    string = string.replace(/&/g, "&amp;");
+    string = string.replace(/</g, "&lt;");
+    string = string.replace(/>/g, "&gt;");
+    string = string.replace(/"/g, "&quot;");
+    string = string.replace(/'/g, "&#039;");
+    return string;
+}
+
 var escapeRegex = function(string) {
+    if(string == null || string == "") {
+        return string;
+    }
     return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
 
 var replaceAll = function(string, search, replace) {
+    if(string == null || string == "" || search == null || replace == null) {
+        return string;
+    }
     return string.replace(new RegExp(escapeRegex(search), 'g'), replace);
 }
 
