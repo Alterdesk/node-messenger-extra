@@ -184,5 +184,6 @@ module.exports = {
     getMentionedUserRegex : getMentionedUserRegex,
     getMentionedAllRegex : getMentionedAllRegex,
     getUuidRegex : getUuidRegex,
+    getBase64Regex : getBase64Regex,
     getFilePathRegex : getFilePathRegex
 }
