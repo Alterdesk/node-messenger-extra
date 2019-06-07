@@ -185,5 +185,6 @@ module.exports = {
     getMentionedAllRegex : getMentionedAllRegex,
     getUuidRegex : getUuidRegex,
     getBase64Regex : getBase64Regex,
-    getFilePathRegex : getFilePathRegex
+    getFilePathRegex : getFilePathRegex,
+    Logger : require('./logger.js')
 }
