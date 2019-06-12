@@ -162,7 +162,7 @@ var getBase64Regex = function() {
 }
 
 var getFilePathRegex = function() {
-    return new RegExp(/^((\/tmp\/messenger-pdfs\/)|(\/tmp\/messenger-downloads\/)|(\/usr\/local\/share\/bots\/resources\/))([0-9a-zA-Z\_\-\/]+(.[0-9a-zA-Z]+)?)+$/, 'g');
+    return new RegExp(/^(\/tmp\/messenger-pdfs\/|\/tmp\/messenger-downloads\/|\/usr\/local\/share\/bots\/resources\/)[0-9a-zA-Z\_\-\/]{1,}(\.[0-9a-zA-Z]{1,}){0,}$/, 'g');
 }
 
 module.exports = {
