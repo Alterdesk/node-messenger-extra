@@ -36,6 +36,44 @@ var replaceAll = function(string, search, replace) {
     return string.replace(new RegExp(escapeRegex(search), 'g'), replace);
 }
 
+var safeName = function(string, maxLength, lowerCase) {
+    if(typeof string !== "string" || string.length === 0) {
+        return string;
+    }
+    string = string.replace(/[àáâãäåāăąÀÁÂÃÄÅĀĂĄ]/gi, "a");
+    string = string.replace(/[çćĉċčÇĆĈĊČ]/gi, "c");
+    string = string.replace(/[ďđĎĐ]/gi, "d");
+    string = string.replace(/[èéëêēĕėęěÈÉËÊĒĔĖĘĚ]/gi, "e");
+    string = string.replace(/[ĝğġģĜĞĠĢ]/gi, "g");
+    string = string.replace(/[ĥħĤĦ]/gi, "h");
+    string = string.replace(/[ìíîïĩīĭįıÌÍÎÏĨĪĬĮİ]/gi, "i");
+    string = string.replace(/[ĵĴ]/gi, "j");
+    string = string.replace(/[ķĶ]/gi, "k");
+    string = string.replace(/[ĺļľŀłĹĻĽĿŁ]/gi, "l");
+    string = string.replace(/[ñńņňŉŋÑŃŅŇŊ]/gi, "n");
+    string = string.replace(/[òóôõöøōŏőÒÓÔÕÖØŌŎŐ]/gi, "o");
+    string = string.replace(/[ŕŗřŔŖŘ]/gi, "r");
+    string = string.replace(/[śŝşšŚŜŞŠ]/gi, "s");
+    string = string.replace(/[ţťŧŢŤŦ]/gi, "t");
+    string = string.replace(/[ùúûüũūŭůűųÙÚÛÜŨŪŬŮŰŲ]/gi, "u");
+    string = string.replace(/[ŵŴ]/gi, "w");
+    string = string.replace(/[ýÿŷÝŸŶ]/gi, "y");
+    string = string.replace(/[źżžŹŻŽ]/gi, "z");
+
+    string = string.replace(/★/gi, "1");
+    string = string.replace(/☆/gi, "0");
+    string = string.replace(/[\W]+/gi, "_");
+
+    if(maxLength > 0 && string.length > maxLength) {
+        string = string.substring(0, maxLength);
+    }
+    if(lowerCase) {
+        string = string.toLowerCase();
+    }
+
+    return string;
+}
+
 // String to lowercase
 var lowercase = function(string) {
     if(typeof string !== "string" || string == "") {
@@ -169,6 +207,7 @@ module.exports = {
     escapeHtml : escapeHtml,
     escapeRegex : escapeRegex,
     replaceAll : replaceAll,
+    safeName : safeName,
     lowercase : lowercase,
     uppercase : uppercase,
     capitalizeFirstLetter : capitalizeFirstLetter,
