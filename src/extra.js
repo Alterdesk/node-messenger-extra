@@ -178,7 +178,7 @@ var getEmailRegex = function() {
 
 // Get the regular expression to detect mentioned tags
 var getMentionedRegex = function() {
-    return new RegExp(/\[mention=(([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})||(@all))\]/, 'gi');
+    return new RegExp(/\[mention=(([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})|(@all))\]/, 'gi');
 }
 
 // Get the regular expression to detect mentioned user tag
@@ -189,6 +189,10 @@ var getMentionedUserRegex = function() {
 // Get the regular expression to detect the mentioned all tag
 var getMentionedAllRegex = function() {
     return new RegExp(/\[mention=@all\]/, 'g');
+}
+
+var getStartCommandRegex = function(command) {
+    return new RegExp("^[ \\n\\r\\t]*(\\[mention=(([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})|(@all))\\][ \\n\\r\\t]*){0,1}" + command + "[ \\n\\r\\t]*$", 'gi')
 }
 
 var getUuidRegex = function() {
@@ -222,6 +226,7 @@ module.exports = {
     getMentionedRegex : getMentionedRegex,
     getMentionedUserRegex : getMentionedUserRegex,
     getMentionedAllRegex : getMentionedAllRegex,
+    getStartCommandRegex : getStartCommandRegex,
     getUuidRegex : getUuidRegex,
     getBase64Regex : getBase64Regex,
     getFilePathRegex : getFilePathRegex
