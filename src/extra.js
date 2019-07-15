@@ -191,6 +191,10 @@ var getMentionedAllRegex = function() {
     return new RegExp(/\[mention=@all\]/, 'g');
 }
 
+var getOptionRegex = function(option) {
+    return new RegExp("^[ \\n\\r\\t]*" + option + "[ \\n\\r\\t]*$", "i");
+}
+
 var getStartCommandRegex = function(command) {
     return new RegExp("^[ \\n\\r\\t]*(\\[mention=(([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})|(@all))\\][ \\n\\r\\t]*){0,1}" + command + "[ \\n\\r\\t]*$", 'gi')
 }
@@ -226,6 +230,7 @@ module.exports = {
     getMentionedRegex : getMentionedRegex,
     getMentionedUserRegex : getMentionedUserRegex,
     getMentionedAllRegex : getMentionedAllRegex,
+    getOptionRegex : getOptionRegex,
     getStartCommandRegex : getStartCommandRegex,
     getUuidRegex : getUuidRegex,
     getBase64Regex : getBase64Regex,
