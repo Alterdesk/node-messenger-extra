@@ -36,7 +36,7 @@ var replaceAll = function(string, search, replace) {
     return string.replace(new RegExp(escapeRegex(search), 'g'), replace);
 }
 
-var safeName = function(string, maxLength, lowerCase) {
+var safeName = function(string, maxLength, lowerCase, collapseBlocked) {
     if(typeof string !== "string" || string.length === 0) {
         return string;
     }
@@ -62,7 +62,12 @@ var safeName = function(string, maxLength, lowerCase) {
 
     string = string.replace(/★/gi, "1");
     string = string.replace(/☆/gi, "0");
-    string = string.replace(/[\W]+/gi, "_");
+
+    if(collapseBlocked) {
+        string = string.replace(/[\W]+/gi, "");
+    } else {
+        string = string.replace(/[\W]+/gi, "_");
+    }
 
     if(maxLength > 0 && string.length > maxLength) {
         string = string.substring(0, maxLength);
