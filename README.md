@@ -1,6 +1,11 @@
-# Node Messenger Extra
+# Node Messenger Extra(DEPRECATED)
 
 Extra node helper functions for the messenger
+
+## Deprecated
+This project is deprecated and functionality was merged in [hubot-questionnaire-framework](https://github.com/Alterdesk/hubot-questionnaire-framework)
+in [StringTools](https://github.com/Alterdesk/hubot-questionnaire-framework/blob/master/src/utils/string-tools.js)
+and [RegexTools](https://github.com/Alterdesk/hubot-questionnaire-framework/blob/master/src/utils/regex-tools.js)
 
 ## Setup
 Require the extra object
